@@ -1,0 +1,114 @@
+body {
+  font-size:12px;
+  font-family:Arial,Helvetica,Sans-Serif;
+  color:#CCCCCC;
+  margin:0px;
+  padding:0px;
+}
+
+#header {
+  overflow:hidden;
+}
+
+#faq {
+  float:right;
+  font-size:18px;
+  font-weight:bold;
+  color:#blue;
+}
+
+
+#gradient {
+
+}
+
+
+#pane_container {
+  overflow:hidden;
+  width:1000px;
+  margin-right:auto;
+  margin-left:auto;
+  height:220px;
+}
+
+#acta_pane {
+  width:485px;
+  float:left;
+  height:200px;
+  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* W3C */
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+   box-shadow: 0 8px 6px -6px black;
+}
+
+#acta_sub_pane {
+  display:none;
+  float:left;
+  height:200px;
+}
+
+#beyond_pane {
+  width:485px;
+  float:left;
+  height:200px;
+  margin-left:30px;
+  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* W3C */
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+#beyond_sub_pane {
+  display:none;
+}
+
+
+input {
+  height:24px;
+  width:180px;
+}
+
+
+#form_ct {
+  width:1200px;
+  overflow:hidden;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#campaign_form {
+  width:680px;
+  float:left;
+}
+
+#graphic {
+  float:left;
+  width:300px;
+  margin-left:20px;
+}
+
+#modal_bg {
+  background:rgba(0,0,0,0.8);
+  z-index:3;
+  height:100%;
+  width:100%;
+  position:fixed;
+  text-align:center;
+  display:none;
+}
+
+#modal_win {
+  margin-top:100px;
+  margin-left:auto;
+  margin-right:auto;
+}
