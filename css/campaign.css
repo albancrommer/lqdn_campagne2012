@@ -1,114 +1,90 @@
-body {
-  font-size:12px;
-  font-family:Arial,Helvetica,Sans-Serif;
-  color:#CCCCCC;
-  margin:0px;
-  padding:0px;
+
+*{
+      transition: max-height linear 1s;
+      transition: width linear 1s;
 }
-
-#header {
-  overflow:hidden;
+    
+#header{
+    background: hsl(222, 60%, 33%);
+    background: #207cca; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #1477c9 0%, #213f86 99%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#1477c9), color-stop(99%,#213f86)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #1477c9 0%,#213f86 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #1477c9 0%,#213f86 99%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #1477c9 0%,#213f86 99%); /* IE10+ */
+    background: radial-gradient(center, ellipse cover, #1477c9 0%,#213f86 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1477c9', endColorstr='#213f86',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border-bottom: 1px solid hsl(222,56%,42%);
 }
-
-#faq {
-  float:right;
-  font-size:18px;
-  font-weight:bold;
-  color:#blue;
+#header *{color:whitesmoke;
+          text-align: center;}
+#anime{
+    background: hsl(245, 100%, 4%) url(../images/anime_bg.png) no-repeat 50% 50%;
+    border-bottom: 2px solid rgba(0,0,0,0.75);
+    border-top: 3px solid rgba(0,0,0,0.79);
+    height:500px;
 }
-
-
-#gradient {
-
+    #anime *{color: hsl(222, 5%, 96%);}
+    #anime .row{position: relative;}
+    
+    #anime .bulletpoints a {
+        display: block;
+        margin: 5px 0;
+        padding:5px 0;
+        width:300px;
+    }
+    
+    #anime .anime_display {
+        color:hsl(222,56%,22%);
+        margin-top:30px;
+        min-height: 360px;
+        width:270px;
+        z-index: 2;
+    }
+    #anime .panel_acta{
+        text-align: right;
+    }
+    #anime #panel_rollover{    
+        color: #0F52EF;
+        font-size: 8pt;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 450px;
+        width: 980px;
+    }
+    
+#progress{
+    background: #1477c9; /* Old browsers */
+    background: -moz-linear-gradient(top,  #1477c9 0%, #213f86 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1477c9), color-stop(99%,#213f86)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #1477c9 0%,#213f86 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #1477c9 0%,#213f86 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #1477c9 0%,#213f86 99%); /* IE10+ */
+    background: linear-gradient(top,  #1477c9 0%,#213f86 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1477c9', endColorstr='#213f86',GradientType=0 ); /* IE6-9 */
+    border-bottom:1px solid hsl(222,68%,28%);
+    border-top:1px solid hsl(222,56%,52%);
 }
-
-
-#pane_container {
-  overflow:hidden;
-  width:1000px;
-  margin-right:auto;
-  margin-left:auto;
-  height:220px;
+    #progress *{
+        color:whitesmoke;
+    }
+#support{
+    background: hsl(56, 33%, 88%);
+    border-bottom:2px solid hsl(56,44%,99%);
+    border-top:2px solid hsl(56,44%,99%);
 }
-
-#acta_pane {
-  width:485px;
-  float:left;
-  height:200px;
-  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* IE10+ */
-  background: linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* W3C */
-  -webkit-box-shadow: 0 8px 6px -6px black;
-  -moz-box-shadow: 0 8px 6px -6px black;
-   box-shadow: 0 8px 6px -6px black;
+#facts{
+    border-bottom:1px solid hsl(56,66%,98%);
+    border-top:3px solid hsl(56, 20%, 68%);
+    background: hsl(56, 33%, 68%);
 }
-
-#acta_sub_pane {
-  display:none;
-  float:left;
-  height:200px;
+#share{
+    background: hsl(222, 59%, 6%);
+    border-bottom: 1px solid rgba(0,0,0,0.75);
+    border-top: 1px solid rgba(0,0,0,0.79);
 }
-
-#beyond_pane {
-  width:485px;
-  float:left;
-  height:200px;
-  margin-left:30px;
-  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* IE10+ */
-  background: linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* W3C */
-  -webkit-box-shadow: 0 8px 6px -6px black;
-  -moz-box-shadow: 0 8px 6px -6px black;
-  box-shadow: 0 8px 6px -6px black;
-}
-
-#beyond_sub_pane {
-  display:none;
-}
-
-
-input {
-  height:24px;
-  width:180px;
-}
-
-
-#form_ct {
-  width:1200px;
-  overflow:hidden;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-#campaign_form {
-  width:680px;
-  float:left;
-}
-
-#graphic {
-  float:left;
-  width:300px;
-  margin-left:20px;
-}
-
-#modal_bg {
-  background:rgba(0,0,0,0.8);
-  z-index:3;
-  height:100%;
-  width:100%;
-  position:fixed;
-  text-align:center;
-  display:none;
-}
-
-#modal_win {
-  margin-top:100px;
-  margin-left:auto;
-  margin-right:auto;
-}
+    #share *{color: hsl(222, 5%, 96%);}
+.container-wrapper{padding:10px 0;}
+li{list-style: none;}
+* label{display:inline;}
