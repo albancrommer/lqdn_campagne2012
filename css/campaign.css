@@ -1,4 +1,4 @@
-
+/* http://www.colorzilla.com/gradient-editor/ */
 *{
       transition: max-height linear 1s;
       transition: width linear 1s;
@@ -22,7 +22,7 @@
     background: hsl(245, 100%, 4%) url(../images/anime_bg.png) no-repeat 50% 50%;
     border-bottom: 2px solid rgba(0,0,0,0.75);
     border-top: 3px solid rgba(0,0,0,0.79);
-    height:500px;
+    height:350px;
 }
     #anime *{color: hsl(222, 5%, 96%);}
     #anime .row{position: relative;}
@@ -36,8 +36,8 @@
     
     #anime .anime_display {
         color:hsl(222,56%,22%);
-        margin-top:30px;
-        min-height: 360px;
+        margin-top:00px;
+        min-height: 300px;
         width:270px;
         z-index: 2;
     }
@@ -50,7 +50,7 @@
         left: 0;
         position: absolute;
         text-align: center;
-        top: 450px;
+        top: 340px;
         width: 980px;
     }
     
@@ -63,8 +63,8 @@
     background: -ms-linear-gradient(top,  #1477c9 0%,#213f86 99%); /* IE10+ */
     background: linear-gradient(top,  #1477c9 0%,#213f86 99%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1477c9', endColorstr='#213f86',GradientType=0 ); /* IE6-9 */
-    border-bottom:1px solid hsl(222,68%,28%);
-    border-top:1px solid hsl(222,56%,52%);
+    border-bottom:2px solid hsl(222,48%,25%);
+    border-top:1px solid hsl(222,56%,72%);
 }
     #progress *{
         color:whitesmoke;
@@ -82,9 +82,19 @@
 #share{
     background: hsl(222, 59%, 6%);
     border-bottom: 1px solid rgba(0,0,0,0.75);
-    border-top: 1px solid rgba(0,0,0,0.79);
+    border-top: 3px solid rgba(0,0,0,0.6);
 }
     #share *{color: hsl(222, 5%, 96%);}
 .container-wrapper{padding:10px 0;}
 li{list-style: none;}
 * label{display:inline;}
+.faq{height:350px;overflow: auto;}
+#blockfaqsoutien h4{font-size: 10pt;}
+.progress_indices{position:relative;}
+    .progress_indices .steps{position: relative;}
+    .progress_indices .step{display:inline-block;width:24%}
+    .progress_indices .step.step_l{position:absolute;right: 0px;;text-align:right;}
+    .progress_indices .marks div{float:left;width:33.33%;}
+    .progress_indices .marks .start{}
+    .progress_indices .marks .middle{text-align:center;}
+    .progress_indices .marks .end{float:right;text-align:right;}
