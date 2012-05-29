@@ -35,11 +35,11 @@ class translator{
         
         // Stuff went wrong
         if( null === $string){
-            echo "MISSING ERRROR STRING";
+            return "MISSING ERRROR STRING";
         }
         // More if required here ...
         // ...
         // echo
-        echo utf8_encode($string);
+        return utf8_encode($string);
     }
 }

@@ -19,7 +19,7 @@
 #header *{color:whitesmoke;
           text-align: center;}
 #anime{
-    background: hsl(245, 100%, 4%) url(../images/anime_bg.png) no-repeat 50% 50%;
+    background: hsl(245, 100%, 4%) url(../images/anime_bg.gif) no-repeat 50% 50%;
     border-bottom: 2px solid rgba(0,0,0,0.75);
     border-top: 3px solid rgba(0,0,0,0.79);
     height:350px;
@@ -31,16 +31,51 @@
         display: block;
         margin: 5px 0;
         padding:5px 0;
-        width:300px;
     }
     
     #anime .anime_display {
-        color:hsl(222,56%,22%);
+        background:rgba(0,0,0,0.6);
+        color:hsl(222,56%,99%);
         margin-top:00px;
         min-height: 300px;
-        width:270px;
+        text-shadow: none;
+        width:410px;
         z-index: 2;
     }
+    #anime_text{
+        width:300px
+    }
+    #anime_figure{
+        float:right;
+        height:300px;
+        width:120px;
+        background:transparent no-repeat center bottom ;
+    }
+    #anime_figure.item_acta_1{
+        background-image: url(/images/perso_1.gif);
+    }
+    #anime_figure.item_acta_2{
+        background-image: url(/images/perso_2.gif);
+    }
+    #anime_figure.item_acta_3{
+        background-image: url(/images/perso_1.gif);
+    }
+    #anime_figure.item_acta_4{
+        background-image: url(/images/perso_2.gif);
+    }
+    #anime_figure.item_beyond_1{
+        background-image: url(/images/perso_2.gif);
+    }
+    #anime_figure.item_beyond_2{
+        background-image: url(/images/perso_1.gif);
+    }
+    #anime_figure.item_beyond_3{
+        background-image: url(/images/perso_2.gif);
+    }
+    #anime_figure.item_beyond_4{
+        background-image: url(/images/perso_1.gif);
+    }
+    
     #anime .panel_acta{
         text-align: right;
     }

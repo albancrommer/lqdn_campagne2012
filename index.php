@@ -21,7 +21,6 @@ include("lang/translator.php");
     <script  type="text/javascript" src="jquery-ui-1.8.20.custom/js/jquery-1.7.2.min.js"></script>
     <script  type="text/javascript" src="jquery-ui-1.8.20.custom/js/jquery-ui-1.8.20.custom.min.js"></script>
     <script  type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script  type="text/javascript" src="js/accordion.js"></script>
   </head>
   <body>
 
@@ -45,12 +44,14 @@ include("lang/translator.php");
     <div class="container-wrapper" id="anime">
         <div class="container" >
             <div class="row">
-                <div class="span4 panel_acta">
-                    <h1><?= $t->t("acta_title") ?></h1>
+                <div class="span3 panel_acta">
+                    <h2><?= $t->t("acta_title") ?></h2>
                     <dl class="bulletpoints">
+                        <?php $id = 1 ?>
                         <?php foreach($t->t("acta_points") as $point => $details ): ?>
+                            
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn btn-primary btn-large">
+                                <a href="javascript:void(0)" class="anime_point btn btn-primary btn-large" rel="item_acta_<?php echo $id; $id++ ?>">
                                     <?php echo $point ?>
                                 </a>
                             </dt>
@@ -60,18 +61,21 @@ include("lang/translator.php");
                         <?php endforeach ?>
                     </dl>
                 </div>
-                <div class="span4">
+                <div class="span6">
                    &nbsp;
                     <div class="anime_display btn  btn-large" style="display:none;">
-                        
+                        <!-- content assigned through js switchAnime() -->
+                        <div id="anime_figure"></div>
+                        <div id="anime_text"></div>
                     </div>
                 </div>
-                <div class="span4 panel_beyond">
-                    <h1><?= $t->t("beyond_title") ?></h1>
+                <div class="span3 panel_beyond">
+                    <h2><?= $t->t("beyond_title") ?></h2>
                     <dl class="bulletpoints">
+                        <?php $id = 1 ?>
                         <?php foreach($t->t("beyond_points") as $point => $details ): ?>
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn btn-primary btn-large">
+                                <a href="javascript:void(0)" class="anime_point btn btn-primary btn-large" rel="item_beyond_<?php echo $id; $id++ ?>">
                                     <?php echo $point ?>
                                 </a>
                             </dt>
@@ -113,7 +117,43 @@ include("lang/translator.php");
                 </div>
 
                 <div class="span6">
-                    <h3>Delays and stuff</h3>
+                    <?php 
+                        // return # days until dayArray
+                        $dayArray = Array(0,0,0,10,31,2012);
+                        function daysRemaining($dA){
+                            $future = mktime( $dA[0],$dA[1],$dA[2],$dA[3],$dA[4],$dA[5]);
+                            $today  = time();
+                            $diff   = ( $future - $today ) / 60 / 60 / 24 ;
+                            return( $diff < 0 ? "0" : floor($diff));
+                            
+                        }
+                       
+                    ?>
+                    <h3><?php  echo daysRemaining($dayArray) ." ". $t->t("days_remaining") ?> </h3>
+                    <h4><?php echo $t->t("generous_donators") ?></h4>
+                    <p id="donator-container"></p>
+                    <?php
+                        // fetch from api
+                        $donatorsList = '[["jean",100],["ahmed",1000],["simone",15],["ganesh",50]]';
+                    ?>
+                    <script type="text/javascript">
+                        var donator_id = 0;
+                        var donatorsList;
+                        function switchDonators(  ){
+                            var l = donatorsList.length;
+                            donator_id = ( donator_id == l - 1)? 0: donator_id + 1;
+                            $("#donator-container").html(
+                                donatorsList[donator_id][0]
+                                + "<?php echo $t->t("path_separator") ?>"
+                                + donatorsList[donator_id][1]+"&euro;"
+                            )
+                        }
+                        (function(){
+                            donatorsList    = <?php echo $donatorsList ?>;
+                            switchDonators()
+                            setInterval("switchDonators()",3000)
+                        })()
+                    </script>
                 </div>
 
             </div>
@@ -156,13 +196,18 @@ include("lang/translator.php");
                         <input type="radio" name="sum" value="250" id="sum250" class="predef" />
                         <label for="sum250">250&nbsp;&euro;</label>
                         </li>    <li class="sum othersum" >
-                        <input type="radio" name="sum" value="-1" id="sum1" /><input type="text" name="othersum" value="Autre" id="othersum" /><label for="sum1">&nbsp;&euro;</label></li>
+                        <input type="radio" name="sum" value="-1" id="sum1" /><input type="text" name="othersum" value="Autre" size="4" id="othersum" /><label for="sum1">&nbsp;&euro;</label></li>
                     </ul>
                     <p class="monthlychoice">
                         <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly">Je souhaite faire ce don tous les mois.</label>
-                        <br />
-                        <input type="submit" class="btn btn-large btn-inverse" value="Je soutiens La Quadrature du Net"/>
                     </p>
+                    <p class="monthlychoice">
+                        <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly">Je souhaite voir mon nom affiché dans la liste des donateurs.</label>
+                    </p>
+                    <p class="monthlychoice">
+                        <label for="monthly">Prénom & Nom</label> <input type="text" id="monthly" name="monthly" size="60"/> 
+                    </p>
+                        <input type="submit" class="btn btn-large btn-inverse" value="Je soutiens La Quadrature du Net"/>
                         <ul id="alerts" style="display:none;">
                             <li class="alert <?php echo $t->t("active") ?>" id="piplome_pdf">
                                 <p class="cadeaux"><img src="images/upiplomepdf.png"></p>
@@ -323,16 +368,44 @@ include("lang/translator.php");
     <div class="container-wrapper" id="share">
         <div class="container" >
             <div class="row">
-                <div class="span4">
+                <div class="span2">
                     <h2>
                         Share
                     </h2>
+                    <ul>
+                        <li>
+                            <a class="btn-mini" href="http://twitter.com">Twitter</a>
+                        </li>
+                        <li>
+                            <a class="btn-mini" href="http://identi.ca">Identi.ca</a>
+                        </li>
+                        <li>
+                            <a class="btn-mini" href="mailto:?subject=<?php echo quoted_printable_encode($t->t("meta_title"))?>&body=<?php echo $t->t("meta_title")?>">Email</a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="span4">
+                <div class="span10">
                     <h2>
                         Bloggers material
                     </h2>
+                    <div class="blog_images row">
+                        <div class="span2">
+                            <img src="images/blog-1.jpg" \>
+                        </div>
+                        <div class="span2">
+                            <img src="images/blog-2.jpg" \>
+                        </div>
+                        <div class="span2">
+                            <img src="images/blog-3.jpg" \>
+                        </div>
+                        <div class="span2">
+                            <img src="images/blog-4.jpg" \>
+                        </div>
+                        <div class="span2">
+                            <img src="images/blog-5.jpg" \>
+                        </div>
+                    </div>
                     
                 </div>
 
@@ -341,18 +414,31 @@ include("lang/translator.php");
     </div>
     <script type="text/javascript">
     (function(){
+        
+        
+        // switches text and figure
+        function switchAnime( domElement ){
+            
+            var text            = domElement.parent().next().html()
+            var figure_class    = domElement.attr('rel')
+            var panel           = $(".anime_display")
+            var panel_text      = $(panel).find("#anime_text")
+            var panel_figure    = $(panel).find("#anime_figure")
+            panel_text.html(text);
+            panel_figure.removeClass().addClass(figure_class);
+            panel.show();
+            
+        }
+        
+        // mouseOver
         $("a.anime_point").mouseover(function(){
             
             $(window).data("last", $(this).html())
             console.log( $(window).data("last" ) )
-            var text = $(this).parent().next().html();
-            var panel = $(".anime_display");
-            panel.html(text);
-            panel.show();
-            panel.height("0px");
-            panel.height("auto");
-            //panel.show();
+            switchAnime( $(this));
         });
+        
+        // click
         $("a.anime_point").click(function(){
             
             var state       = $(window).data('state')
@@ -367,13 +453,11 @@ include("lang/translator.php");
             }else{
                 $(window).data("state","active")
                 $(window).data("last",$(this).html())
-                var text    = $(this).parent().next().html();
-                var panel   = $(".anime_display");
-                panel.html(text);
-                panel.show();
+                switchAnime( $(this));
             }
-            // record last clicked 
         });
+        
+        // mouseOut
         $("a.anime_point").mouseout(function(){
             var state      = $(window).data('state')
             if( undefined == state || "inactive" == state ){
@@ -382,8 +466,7 @@ include("lang/translator.php");
             }
         }); 
         
-        
-	
+	// Sets the progress bar
         $( "#progress_bar" ).progressbar({
                 value: 37
         });
