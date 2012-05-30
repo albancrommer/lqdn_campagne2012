@@ -18,17 +18,17 @@ require_once("all.php");
   </head>
   <body>
 
-  <?php include("10_topheader.php");
+  <?php include(dirname(__FILE__) . "/10_topheader.php"); ?>
 
-  <?php include("20_dark_blue_rollover.php"); ?>
+  <?php include( dirname(__FILE__) . "/20_dark_blue_rollover.php"); ?>
       
-  <?php include("30_donation_form.php"); ?>
+  <?php include(dirname(__FILE__) . "/30_donation_form.php"); ?>
 
-  <?php include("40_progres_bar.php"); ?>
+  <?php include(dirname(__FILE__) . "/40_progress_bar.php"); ?>
       
-  <?php include("50_faq.php"); ?>      
+  <?php include(dirname(__FILE__) . "/50_faq.php"); ?>      
       
-  <?php include("60_footer.php"); ?>
+  <?php include(dirname(__FILE__) . "/60_footer.php"); ?>
 
   <script type="text/javascript" src="js/campaign.js"></script>
   
