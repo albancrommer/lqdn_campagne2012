@@ -21,11 +21,11 @@ require_once("all.php");
   <?php include(dirname(__FILE__) . "/10_topheader.php"); ?>
 
   <?php include( dirname(__FILE__) . "/20_dark_blue_rollover.php"); ?>
-      
-  <?php include(dirname(__FILE__) . "/30_donation_form.php"); ?>
 
   <?php include(dirname(__FILE__) . "/40_progress_bar.php"); ?>
       
+  <?php include(dirname(__FILE__) . "/30_donation_form.php"); ?>
+
   <?php include(dirname(__FILE__) . "/50_faq.php"); ?>      
       
   <?php include(dirname(__FILE__) . "/60_footer.php"); ?>
