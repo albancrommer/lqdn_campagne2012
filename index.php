@@ -51,7 +51,7 @@ include("lang/translator.php");
                         <?php foreach($t->t("acta_points") as $point => $details ): ?>
                             
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn btn-primary btn-large" rel="item_acta_<?php echo $id; $id++ ?>">
+                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_acta_<?php echo $id; $id++ ?>">
                                     <?php echo $point ?>
                                 </a>
                             </dt>
@@ -63,7 +63,7 @@ include("lang/translator.php");
                 </div>
                 <div class="span6">
                    &nbsp;
-                    <div class="anime_display btn  btn-large" style="display:none;">
+                    <div class="anime_display " style="display:none;">
                         <!-- content assigned through js switchAnime() -->
                         <div id="anime_figure"></div>
                         <div id="anime_text"></div>
@@ -75,7 +75,7 @@ include("lang/translator.php");
                         <?php $id = 1 ?>
                         <?php foreach($t->t("beyond_points") as $point => $details ): ?>
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn btn-primary btn-large" rel="item_beyond_<?php echo $id; $id++ ?>">
+                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_beyond_<?php echo $id; $id++ ?>">
                                     <?php echo $point ?>
                                 </a>
                             </dt>
@@ -96,8 +96,10 @@ include("lang/translator.php");
     <div class="container-wrapper" id="progress">
         <div class="container" >
             <div class="row">
-                <div class="span6">
+                <div class="span2">
                     <h3> Current progress </h3>
+                </div>
+                <div class="span10">
                     <div id="progress_bar"></div>
                     <div class="progress_indices">
                         <div class="steps">
@@ -115,7 +117,7 @@ include("lang/translator.php");
                         </div>
                     </div>
                 </div>
-
+<!--
                 <div class="span6">
                     <?php 
                         // return # days until dayArray
@@ -155,84 +157,136 @@ include("lang/translator.php");
                         })()
                     </script>
                 </div>
+-->
 
             </div>
         </div>
     </div>
       
     <div class="container-wrapper" id="support">
-        <div class="container" >
-            <div class="row">
-
-                <div class="span6">
-                    <h2>
-                        Support us
-                    </h2>
-                    
-                <div id="form_ct">
-                <div id="campaign_form">
                     <form method="post" action="" name="f1" id="f1">
+        <div class="container" >
+            <div class="row donations">
 
-                    <ul class="donvalist">
-                        <li class="sum">
-                        <input type="radio" name="sum" value="10" id="sum10" class="predef" />
+                <div class="span2">
+                    <h3>
+                        Support us
+                    </h3>
+                </div>
+                <div class="span1 amounts_holder">
+                        <input type="radio" name="sum" value="10" id="sum10" class="predef"  />
                         <label for="sum10">10&nbsp;&euro;</label>
-                        </li>
-                        <li class="sum">
+                        
+                        <div class="alert" id="piplome_pdf" style="display:none">
+                            <p class="cadeaux"><img src="images/upiplomepdf.png"></p>
+                            <p>En remerciement de votre don, vous recevrez 1 000 décimales de π 
+                                dans un certificat personnalisé, envoyé <strong>par courriel au format PDF</strong>.</p>
+                        </div>
+                </div>
+                <div class="span1 amounts_holder">
                         <input type="radio" name="sum" value="25" id="sum25" class="predef" />
                         <label for="sum25">25&nbsp;&euro;</label>
-
-                        </li>
-                        <li class="sum active">
+                        <div class="alert" id="piplome_pdf" style="display:none">
+                            <p class="cadeaux"><img src="images/upiplomepdf.png"></p>
+                            <p>En remerciement de votre don, vous recevrez 1 000 décimales de π 
+                                dans un certificat personnalisé, envoyé <strong>par courriel au format PDF</strong>.</p>
+                        </div>
+                </div>
+                <div class="span1 amounts_holder">
                         <input type="radio" name="sum" value="50" id="sum50" checked="checked" class="predef" />
                         <label for="sum50">50&nbsp;&euro;</label>
-                        </li>
-                        <li class="sum">
+                        <div class="alert " id="piplome" style="display:none">
+                            <p class="cadeaux"><img src="images/upiplome.png"></p>
+                            <p>En remerciement de votre don, vous recevrez 1 000 décimales de π 
+                                dans un certificat personnalisé, envoyé <strong>par courriel au format PDF 
+                                    + un  tirage original de qualité supérieure</strong>.
+                            </p>
+                        </div>    
+                </div>
+                <div class="span1 amounts_holder">
                         <input type="radio" name="sum" value="100" id="sum100" class="predef" />
                         <label for="sum100">100&nbsp;&euro;</label>
-
-                        </li>
-                        <li class="sum">
+                        <div class="alert " id="piplome_ts"  style="display:none">
+                            <p class="cadeaux"><img src="images/upiplome.png">
+                                <span class="plus">+</span><img src="images/upishirt.png"></p>
+                            <p>En remerciement de votre don, vous recevrez 1 000 
+                                décimales de π dans un certificat personnalisé, 
+                                envoyé par courriel au format PDF + un  
+                                tirage original de qualité supérieure + un 
+                                'pi-shirt' portant le logo de La Quadrature 
+                                du Net !</p></div>    
+                </div>
+                <div class="span1 amounts_holder">
                         <input type="radio" name="sum" value="250" id="sum250" class="predef" />
                         <label for="sum250">250&nbsp;&euro;</label>
-                        </li>    <li class="sum othersum" >
-                        <input type="radio" name="sum" value="-1" id="sum1" /><input type="text" name="othersum" value="Autre" size="4" id="othersum" /><label for="sum1">&nbsp;&euro;</label></li>
-                    </ul>
-                    <p class="monthlychoice">
+                        <div class="alert " id="piplome_ts"  style="display:none">
+                            <p class="cadeaux"><img src="images/upiplome.png">
+                                <span class="plus">+</span><img src="images/upishirt.png"></p>
+                            <p>En remerciement de votre don, vous recevrez 1 000 
+                                décimales de π dans un certificat personnalisé, 
+                                envoyé par courriel au format PDF + un  
+                                tirage original de qualité supérieure + un 
+                                'pi-shirt' portant le logo de La Quadrature 
+                                du Net !</p></div>    
+                </div>
+                <div class="span2 amounts_holder">
+                        <input type="radio" name="sum" value="-1" id="sum1" />
+                        <input type="text" name="othersum" value="Autre" size="4" id="othersum" />
+                        <label for="sum1">&nbsp;&euro;</label>
+                        <div class="alert " id="nocado5" style="display:none">
+                            Nous ne pouvons pas accepter les soutiens 
+                            inf&eacute;rieurs &agrave; 5&nbsp;&euro; 
+                            (frais bancaires trop importants). 
+                            Vous pouvez toujours nous aider par 
+                            <a href="/fr/participer">votre action</a>&nbsp;!
+                        </div>
+                </div>
+                <div class="span3" style="position:relative">
+                    <div class="giftContainer" style="display:none;"></div>
+                </div>
+            </div>
+            <div class="row">
+                
+                
+                <div class="span3 offset2">
                         <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly">Je souhaite faire ce don tous les mois.</label>
-                    </p>
-                    <p class="monthlychoice">
+                </div>
+                <div class="span3 ">
+                    <p>
                         <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly">Je souhaite voir mon nom affiché dans la liste des donateurs.</label>
                     </p>
-                    <p class="monthlychoice">
+                    <p>
                         <label for="monthly">Prénom & Nom</label> <input type="text" id="monthly" name="monthly" size="60"/> 
                     </p>
+                </div>
+                <div class="span3 ">
+                </div>
+            </div>
+                    
+                    
+            <div class="row">
+                <div class="span10 offset2">
+                    </p>
                         <input type="submit" class="btn btn-large btn-inverse" value="Je soutiens La Quadrature du Net"/>
-                        <ul id="alerts" style="display:none;">
-                            <li class="alert <?php echo $t->t("active") ?>" id="piplome_pdf">
-                                <p class="cadeaux"><img src="images/upiplomepdf.png"></p>
-                                <p>En remerciement de votre don, vous recevrez 1 000 décimales de π 
-                                    dans un certificat personnalisé, envoyé <strong>par courriel au format PDF</strong>.</p>
-                            </li>
-                            <li class="alert <?php echo $t->t("active") ?>" id="piplome">
-                                <p class="cadeaux"><img src="images/upiplome.png"></p>
-                                <p>En remerciement de votre don, vous recevrez 1 000 décimales de π 
-                                    dans un certificat personnalisé, envoyé <strong>par courriel au format PDF 
-                                        + un  tirage original de qualité supérieure</strong>.
-                                </p>
-                            </li>    
-                            <li class="alert " id="piplome_ts">
-                                <p class="cadeaux"><img src="images/upiplome.png"><span class="plus">+</span><img src="images/upishirt.png"></p><p>En remerciement de votre don, vous recevrez 1 000 décimales de π dans un certificat personnalisé, envoyé <strong>par courriel au format PDF + un  tirage original de qualité supérieure + un 'pi-shirt' portant le logo de La Quadrature du Net !</strong></p></li>    
-                            <li class="alert " id="piplome_ts_surprise">
-                                <p class="cadeaux"><img src="images/upiplome.png"><span class="plus">+</span><img src="images/upishirt.png"></p><p>En remerciement de votre don, vous recevrez 1 000 décimales de π dans un certificat personnalisé, envoyé par courriel au format PDF + un  tirage original de qualité supérieure + un 'pi-shirt' portant le logo de La Quadrature du Net + un mystérieux cadeau surprise&nbsp;!</p></li><li class="alert <?php echo $t->t("active") ?>" id="nocado5">Nous ne pouvons pas accepter les soutiens inf&eacute;rieurs &agrave; 5&nbsp;&euro; (frais bancaires trop importants). Vous pouvez toujours nous aider par <a href="/fr/participer">votre action</a>&nbsp;!
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                </div>
+                 </div>
+
+            </div>
+        </div>
+        </form>
+    </div>
+      
+    <div class="container-wrapper" id="facts">
+        <div class="container" >
+            <div class="row">
+                <div class="span2">
+                    <h3>
+                        FAQ 
+                        
+                    </h3>
                 </div>
 
-                <div class="span6">
+
+                <div class="span10">
                     
                     <div class="pane-content faq">
                         <div id="blockfaqsoutien">
@@ -336,33 +390,13 @@ include("lang/translator.php");
 
                         </div>
 
-  </div>
+                  </div>
                 </div>
 
             </div>
         </div>
     </div>
       
-<!--
-    <div class="container-wrapper" id="facts">
-        <div class="container" >
-            <div class="row">
-                <div class="span6">
-                    <h3>
-                        Your support is greatly appreciated 
-                        
-                    </h3>
-                </div>
-
-
-                <div class="span6">
-                    <img src="images/pichart2011.png"/>
-                </div>
-
-            </div>
-        </div>
-    </div>
-      -->
       
 
     <div class="container-wrapper" id="share">
@@ -466,6 +500,12 @@ include("lang/translator.php");
             }
         }); 
         
+        // gifts
+        $(".amounts_holder input").click(function(e){
+            var src = $(this).parent("div").find(".alert")
+            var tgt = $(".giftContainer")
+            tgt.show().html(src.html())
+        })
 	// Sets the progress bar
         $( "#progress_bar" ).progressbar({
                 value: 37

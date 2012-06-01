@@ -46,8 +46,6 @@ $translation = array(
       "( Free expression on the Net must be guaranteed and protected )"          
                     => "More ",
       "Building tools for empowering citizens to change things"          
-                    => "More ",
-      "(2.5 full-time funded activists, a space in Paris)"          
                     => "More "
   ),
   "panel_rollover"  => "⚠ Roll over or click on buttons to see details",

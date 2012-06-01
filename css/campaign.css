@@ -7,13 +7,6 @@
 #header{
     background: hsl(222, 60%, 33%);
     background: #207cca; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, #1477c9 0%, #213f86 99%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#1477c9), color-stop(99%,#213f86)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover, #1477c9 0%,#213f86 99%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, #1477c9 0%,#213f86 99%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, #1477c9 0%,#213f86 99%); /* IE10+ */
-    background: radial-gradient(center, ellipse cover, #1477c9 0%,#213f86 99%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1477c9', endColorstr='#213f86',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     border-bottom: 1px solid hsl(222,56%,42%);
 }
 #header *{color:whitesmoke;
@@ -28,13 +21,15 @@
     #anime .row{position: relative;}
     
     #anime .bulletpoints a {
+        color:hsl(245, 100%, 4%);
         display: block;
-        margin: 5px 0;
-        padding:5px 0;
+        font-size: 9pt;
+        margin: 13px;
+        padding: 10px;
     }
     
     #anime .anime_display {
-        background:rgba(0,0,0,0.6);
+        background:transparent;
         color:hsl(222,56%,99%);
         margin-top:00px;
         min-height: 300px;
@@ -91,13 +86,6 @@
     
 #progress{
     background: #1477c9; /* Old browsers */
-    background: -moz-linear-gradient(top,  #1477c9 0%, #213f86 99%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1477c9), color-stop(99%,#213f86)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #1477c9 0%,#213f86 99%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #1477c9 0%,#213f86 99%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #1477c9 0%,#213f86 99%); /* IE10+ */
-    background: linear-gradient(top,  #1477c9 0%,#213f86 99%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1477c9', endColorstr='#213f86',GradientType=0 ); /* IE6-9 */
     border-bottom:2px solid hsl(222,48%,25%);
     border-top:1px solid hsl(222,56%,72%);
 }
@@ -109,6 +97,19 @@
     border-bottom:2px solid hsl(56,44%,99%);
     border-top:2px solid hsl(56,44%,99%);
 }
+.donations{padding:20px 0;}
+.giftContainer{
+    left: -35px;
+    position: absolute;
+    top: -16px;
+    width: 250px;
+}
+#othersum{
+    margin: 0;
+    padding: 0;
+    width: 35px;
+}
+    .donations .amounts_holder{height:20px}
 #facts{
     border-bottom:1px solid hsl(56,66%,98%);
     border-top:3px solid hsl(56, 20%, 68%);
@@ -123,7 +124,7 @@
 .container-wrapper{padding:10px 0;}
 li{list-style: none;}
 * label{display:inline;}
-.faq{height:350px;overflow: auto;}
+.faq{}
 #blockfaqsoutien h4{font-size: 10pt;}
 .progress_indices{position:relative;}
     .progress_indices .steps{position: relative;}

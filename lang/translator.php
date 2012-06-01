@@ -35,7 +35,7 @@ class translator{
         
         // Stuff went wrong
         if( null === $string){
-            return "MISSING ERRROR STRING";
+            return   "MISSING ERRROR STRING";
         }
         // More if required here ...
         // ...
