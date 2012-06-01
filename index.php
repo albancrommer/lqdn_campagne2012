@@ -97,7 +97,7 @@ include("lang/translator.php");
         <div class="container" >
             <div class="row">
                 <div class="span2">
-                    <h3> Current progress </h3>
+                    <h3><?= $t->t("current_progress") ?></h3>
                 </div>
                 <div class="span10">
                     <div id="progress_bar"></div>
@@ -170,7 +170,7 @@ include("lang/translator.php");
 
                 <div class="span2">
                     <h3>
-                        Support us
+                    <?= $t->t('support_us') ?>
                     </h3>
                 </div>
                 <div class="span1 amounts_holder">
@@ -231,7 +231,7 @@ include("lang/translator.php");
                 </div>
                 <div class="span2 amounts_holder">
                         <input type="radio" name="sum" value="-1" id="sum1" />
-                        <input type="text" name="othersum" value="Autre" size="4" id="othersum" />
+                        <input type="text" name="othersum" value="<?= $t->t('other_placeholder') ?>" size="4" id="othersum" />
                         <label for="sum1">&nbsp;&euro;</label>
                         <div class="alert " id="nocado5" style="display:none">
                             Nous ne pouvons pas accepter les soutiens 
@@ -249,14 +249,14 @@ include("lang/translator.php");
                 
                 
                 <div class="span3 offset2">
-                        <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly">Je souhaite faire ce don tous les mois.</label>
+                        <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly"><?= $t->t('recurent_donation') ?></label>
                 </div>
                 <div class="span3 ">
                     <p>
-                        <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly">Je souhaite voir mon nom affiché dans la liste des donateurs.</label>
+                        <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly"><?= $t->t('in_donors_list') ?></label>
                     </p>
                     <p>
-                        <label for="monthly">Prénom & Nom</label> <input type="text" id="monthly" name="monthly" size="60"/> 
+                        <label for="monthly"><?= $t->t('firstname_lastname') ?></label> <input type="text" id="monthly" name="monthly" size="60"/> 
                     </p>
                 </div>
                 <div class="span3 ">
@@ -404,7 +404,7 @@ include("lang/translator.php");
             <div class="row">
                 <div class="span2">
                     <h2>
-                        Share
+                        <?= $t->t('share_title') ?>
                     </h2>
                     <ul>
                         <li>
@@ -421,7 +421,7 @@ include("lang/translator.php");
 
                 <div class="span10">
                     <h2>
-                        Bloggers material
+                        <?= $t->t('bloggers_title') ?>
                     </h2>
                     <div class="blog_images row">
                         <div class="span2">

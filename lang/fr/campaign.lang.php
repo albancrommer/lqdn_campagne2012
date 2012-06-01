@@ -53,7 +53,16 @@ $translation = array(
   "generous_donators"   => "Generous donators",
   "days_remaining"   => "days until the end of this campaign",
   "banners_title"   => "Affichez nos couleurs, soutenez la campagne de financement de la quadrature",
-  "faq_title"       => "Foire aux Questions"
+  "faq_title"       => "Foire aux Questions",
+  "current_progress" => "Progression",
+  "support_us"      => "Soutenez nous",
+  "other_placeholder" => "Autre",
+  "recurent_donation" => "Je souhaite faire ce don tous les mois.",
+  "in_donors_list" => "Je souhaite voir mon nom affiché dans la liste des donateurs.",
+  "firstname_lastname" => "Prénom & Nom",
+  "support_button" => "Je soutiens La Quadrature du Net",
+  "share_title" => "Partager",
+  "bloggers_title" => "Bloggers material"
 );
 
 $t = new translator(array(
