@@ -287,7 +287,7 @@ include("lang/translator.php");
 
 
                 <div class="span10">
-                    
+                    <h2><?= $t->t("faq_title") ?></h2>
                     <div class="pane-content faq">
                         <div id="blockfaqsoutien">
                         <script type="text/javascript">

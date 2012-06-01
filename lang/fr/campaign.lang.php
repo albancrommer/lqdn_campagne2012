@@ -53,6 +53,7 @@ $translation = array(
   "generous_donators"   => "Generous donators",
   "days_remaining"   => "days until the end of this campaign",
   "banners_title"   => "Affichez nos couleurs, soutenez la campagne de financement de la quadrature",
+  "faq_title"       => "Foire aux Questions"
 );
 
 $t = new translator(array(
