@@ -296,7 +296,7 @@ include("lang/translator.php");
                             });
                             </script>
                         <h4 id="faq-budget" class="selected"><a href="#">À quoi servira mon don&nbsp;?</a></h4>
-                        <div style="display: block; height: auto; overflow: hidden;"><img src="/images/pichart2011.png">
+                        <div style="display: block; height: auto; overflow: hidden;"><img src="/images/pichart_en2012.png">
                         <p>Budget prévisionnel total 2011&nbsp;: 147&nbsp;K&nbsp;€</p>
                         <p>Un compte rendu de l'exercice 2010 ainsi que d'autres éléments d'information sur le financement de La Quadrature du Net sont disponibles <a href="http://blog.fdn.fr/post/2011/03/09/Les-finances-de-La-Quadrature">sur cet article du blog de FDN</a>.
                         </p></div>
