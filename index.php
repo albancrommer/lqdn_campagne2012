@@ -8,12 +8,12 @@ include("lang/translator.php");
   require_once(dirname(__FILE__) . "/lang/$lang/campaign.lang.php");
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $lang ?>">
+<html lang="<?= $lang ?>">
   <head>
     <title><?= $t->t("meta_title") ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo $t->t("meta_desc")?>">
+    <meta name="description" content="<?= $t->t("meta_desc")?>">
     <meta name="author" content="la Quadrature du Net">
     <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/campaign.css"/>
@@ -51,12 +51,12 @@ include("lang/translator.php");
                         <?php foreach($t->t("acta_points") as $point => $details ): ?>
                             
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_acta_<?php echo $id; $id++ ?>">
-                                    <?php echo $point ?>
+                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_acta_<?= $id; $id++ ?>">
+                                    <?= $point ?>
                                 </a>
                             </dt>
                             <dl class="anime_details" style="display:none">
-                                <?php echo $details ?>
+                                <?= $details ?>
                             </dl>
                         <?php endforeach ?>
                     </dl>
@@ -75,18 +75,18 @@ include("lang/translator.php");
                         <?php $id = 1 ?>
                         <?php foreach($t->t("beyond_points") as $point => $details ): ?>
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_beyond_<?php echo $id; $id++ ?>">
-                                    <?php echo $point ?>
+                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_beyond_<?= $id; $id++ ?>">
+                                    <?= $point ?>
                                 </a>
                             </dt>
                             <dl class="anime_details " style="display:none">
-                                <?php echo $details ?>
+                                <?= $details ?>
                             </dl>
                         <?php endforeach ?>
                     </dl>
                 </div>
                 <div id="panel_rollover">
-                    <?php echo $t->t("panel_rollover")?>
+                    <?= $t->t("panel_rollover")?>
                 </div>
             </div>
         </div>
@@ -131,8 +131,8 @@ include("lang/translator.php");
                         }
                        
                     ?>
-                    <h3><?php  echo daysRemaining($dayArray) ." ". $t->t("days_remaining") ?> </h3>
-                    <h4><?php echo $t->t("generous_donators") ?></h4>
+                    <h3><?= daysRemaining($dayArray) ." ". $t->t("days_remaining") ?> </h3>
+                    <h4><?= $t->t("generous_donators") ?></h4>
                     <p id="donator-container"></p>
                     <?php
                         // fetch from api
@@ -146,12 +146,12 @@ include("lang/translator.php");
                             donator_id = ( donator_id == l - 1)? 0: donator_id + 1;
                             $("#donator-container").html(
                                 donatorsList[donator_id][0]
-                                + "<?php echo $t->t("path_separator") ?>"
+                                + "<?= $t->t("path_separator") ?>"
                                 + donatorsList[donator_id][1]+"&euro;"
                             )
                         }
                         (function(){
-                            donatorsList    = <?php echo $donatorsList ?>;
+                            donatorsList    = <?= $donatorsList ?>;
                             switchDonators()
                             setInterval("switchDonators()",3000)
                         })()
@@ -414,7 +414,7 @@ include("lang/translator.php");
                             <a class="btn-mini" href="http://identi.ca">Identi.ca</a>
                         </li>
                         <li>
-                            <a class="btn-mini" href="mailto:?subject=<?php echo quoted_printable_encode($t->t("meta_title"))?>&body=<?php echo $t->t("meta_title")?>">Email</a>
+                            <a class="btn-mini" href="mailto:?subject=<?= quoted_printable_encode($t->t("meta_title"))?>&body=<?= $t->t("meta_title")?>">Email</a>
                         </li>
                     </ul>
                 </div>
