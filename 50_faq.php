@@ -1,16 +1,6 @@
 
-    <div class="container-wrapper" id="facts"><!-- FAQ -->
-        <div class="container" >
-            <div class="row">
-                <div class="span2">
-                    <h3>
-                        FAQ 
-                        
-                    </h3>
-                </div>
-
-
-                <div class="span10">
+    
+                <div class="span10" style="width:480px;float:left">
                     <h2><?= $t->t("faq_title") ?></h2>
                     <div class="pane-content faq">
                         <div id="blockfaqsoutien">
@@ -118,6 +108,4 @@
                 </div>
 
             </div>
-        </div>
-    </div><!-- /FAQ -->
 

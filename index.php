@@ -23,11 +23,17 @@ require_once("all.php");
   <?php include( dirname(__FILE__) . "/20_dark_blue_rollover.php"); ?>
 
   <?php include(dirname(__FILE__) . "/40_progress_bar.php"); ?>
-      
-  <?php include(dirname(__FILE__) . "/30_donation_form.php"); ?>
+  
+     <div class="container-wrapper" id="support"><!-- donation form -->
+        <div class="container" style="overflow:hidden">
+    
+         <?php include(dirname(__FILE__) . "/30_donation_form.php"); ?>
+         <?php include(dirname(__FILE__) . "/50_faq.php"); ?>      
+  
+        </div>
+     </div>
 
-  <?php include(dirname(__FILE__) . "/50_faq.php"); ?>      
-      
+
   <?php include(dirname(__FILE__) . "/60_footer.php"); ?>
 
   <script type="text/javascript" src="js/campaign.js"></script>

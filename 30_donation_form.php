@@ -1,8 +1,6 @@
 
-    <div class="container-wrapper" id="support"><!-- donation form -->
-                    <form method="post" action="" name="f1" id="f1">
-        <div class="container" >
-            <div class="row donations">
+               <form method="post" action="" name="f1" id="f1">
+               <div class="row donations" style="width:460px;background:red;float:left;overflow:hidden">
 
                 <div class="span2">
                     <h3>
@@ -80,10 +78,7 @@
                 <div class="span3" style="position:relative">
                     <div class="giftContainer" style="display:none;"></div>
                 </div>
-            </div>
             <div class="row">
-                
-                
                 <div class="span3 offset2">
                         <input type="checkbox" id="monthly" name="monthly"/> <label for="monthly"><?= $t->t('recurent_donation') ?></label>
                 </div>
@@ -106,8 +101,11 @@
                         <input type="submit" class="btn btn-large btn-inverse" value="Je soutiens La Quadrature du Net"/>
                  </div>
 
+
             </div>
-        </div>
+
+            </div>
         </form>
-    </div><!-- donation form -->
+
+    <!-- donation form -->
 
