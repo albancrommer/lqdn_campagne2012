@@ -35,7 +35,7 @@ $translation = array(
                     => "More ",
       "Building tools for empowering citizens to change things"
                     => "More ",
-+      "Funding full-time activists and volunteers' actions"
+      "Funding full-time activists and volunteers' actions"
                     => "More "
   ),
   "panel_rollover"  => "⚠ Roll over or click on buttons to see details",
