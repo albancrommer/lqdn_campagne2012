@@ -16,7 +16,7 @@
     border-bottom: 2px solid rgba(0,0,0,0.75);
     border-top: 3px solid rgba(0,0,0,0.79);
     border:0px;
-    height:480px;
+    height:410px;
 }
     #anime *{color: hsl(222, 5%, 96%);}
     #anime .row{position: relative;}
@@ -59,7 +59,7 @@
         left: 0;
         position: absolute;
         text-align: center;
-        top: 450px;
+        top: 390px;
         width: 980px;
     }
     

@@ -8,7 +8,7 @@ $translation = array(
         For the last 3 years, it helped raise awareness and campaign against ACTA.
         We must now finally defeat ACTA, and advocate for a positive agenda
         that will ensure that our freedoms will be guaranteed online.   ",
-  "header_title"    => "La Quadrature du Net needs your help to continue its action. ",
+  "header_title"    => "La Quadrature du Net needs you to continue its action against ACTA..and beyond.",
   "header_desc"     => "
         La Quadrature defends citizens rights and freedoms online since 2008.
         For the last 3 years, it helped raise awareness and campaign against ACTA.
@@ -35,7 +35,7 @@ $translation = array(
                     => "More ",
       "Building tools for empowering citizens to change things"
                     => "More ",
-+      "Funding full-time activists and volunteers' actions"
+      "Funding full-time activists and volunteers' actions"
                     => "More "
   ),
   "panel_rollover"  => "⚠ Roll over or click on buttons to see details",
