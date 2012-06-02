@@ -9,7 +9,7 @@
                         <?php foreach($t->t("acta_points") as $point => $details ): ?>
                             
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn btn-large" rel="item_acta_<?php echo $id; $id++ ?>">
+                                <a href="javascript:void(0)" class="anime_point btn btn-large" rel="item_acta_<?php echo $id; $id++ ?>" perso_id="<?= $id - 1 ?>">
                                    <?php echo $point ?>
                                 </a>
                             </dt>
@@ -23,7 +23,7 @@
                    &nbsp;
                     <div class="anime_display " style="display:none;">
                         <!-- content assigned through js switchAnime() -->
-                        <div id="anime_figure"><img src="images/perso_1.png"/></div>
+                        <div id="anime_figure"><img id="figure_img" src="images/perso_1.png"/></div>
                         <div id="anime_text"></div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                         <?php $id = 1 ?>
                         <?php foreach($t->t("beyond_points") as $point => $details ): ?>
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_beyond_<?= $id; $id++ ?>">
+                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_beyond_<?= $id; $id++ ?>" perso_id="<?= $id + 2  ?>">
                                     <?= $point ?>
                                 </a>
                             </dt>

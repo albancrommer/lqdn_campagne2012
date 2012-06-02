@@ -8,12 +8,10 @@ $(document).ready(function() {
     function switchAnime( domElement ){
 
         var text            = domElement.parent().next().html()
-        var figure_class    = domElement.attr('rel')
         var panel           = $(".anime_display")
         var panel_text      = $(panel).find("#anime_text")
-        var panel_figure    = $(panel).find("#anime_figure")
         panel_text.html(text);
-        panel_figure.removeClass().addClass(figure_class);
+        $('#figure_img').attr('src','images/perso_' + domElement.attr('perso_id') + '.png');
         panel.show();
 
     }
