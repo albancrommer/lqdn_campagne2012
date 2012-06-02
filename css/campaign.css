@@ -15,7 +15,8 @@
     background: hsl(245, 100%, 4%) url(../images/anime_bg.gif) no-repeat 50% 50%;
     border-bottom: 2px solid rgba(0,0,0,0.75);
     border-top: 3px solid rgba(0,0,0,0.79);
-    height:350px;
+    border:0px;
+    height:480px;
 }
     #anime *{color: hsl(222, 5%, 96%);}
     #anime .row{position: relative;}
@@ -31,44 +32,22 @@
     #anime .anime_display {
         background:transparent;
         color:hsl(222,56%,99%);
-        margin-top:00px;
+        margin-top:28px;
         min-height: 300px;
         text-shadow: none;
         width:410px;
         z-index: 2;
+        border:0px;
     }
     #anime_text{
-        width:300px
+        width:280px;
+        text-align:justify;
     }
     #anime_figure{
         float:right;
         height:300px;
         width:120px;
         background:transparent no-repeat center bottom ;
-    }
-    #anime_figure.item_acta_1{
-        background-image: url(/images/perso_1.gif);
-    }
-    #anime_figure.item_acta_2{
-        background-image: url(/images/perso_2.gif);
-    }
-    #anime_figure.item_acta_3{
-        background-image: url(/images/perso_1.gif);
-    }
-    #anime_figure.item_acta_4{
-        background-image: url(/images/perso_2.gif);
-    }
-    #anime_figure.item_beyond_1{
-        background-image: url(/images/perso_2.gif);
-    }
-    #anime_figure.item_beyond_2{
-        background-image: url(/images/perso_1.gif);
-    }
-    #anime_figure.item_beyond_3{
-        background-image: url(/images/perso_2.gif);
-    }
-    #anime_figure.item_beyond_4{
-        background-image: url(/images/perso_1.gif);
     }
     
     #anime .panel_acta{
@@ -80,7 +59,7 @@
         left: 0;
         position: absolute;
         text-align: center;
-        top: 340px;
+        top: 450px;
         width: 980px;
     }
     
@@ -134,3 +113,13 @@ li{list-style: none;}
     .progress_indices .marks .start{}
     .progress_indices .marks .middle{text-align:center;}
     .progress_indices .marks .end{float:right;text-align:right;}
+
+.sum {
+  display:inline;
+  margin-right:15px;
+}
+
+.donvalist {
+  background:green;
+  margin-left:0px;
+}

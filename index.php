@@ -15,7 +15,7 @@ include("lang/translator.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $t->t("meta_desc")?>">
     <meta name="author" content="la Quadrature du Net">
-    <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="css/campaign.css"/>
     <link type="text/css" rel="stylesheet" href="jquery-ui-1.8.20.custom/css/custom-theme/jquery-ui-1.8.20.custom.css"/>
     <script  type="text/javascript" src="jquery-ui-1.8.20.custom/js/jquery-1.7.2.min.js"></script>
@@ -51,8 +51,8 @@ include("lang/translator.php");
                         <?php foreach($t->t("acta_points") as $point => $details ): ?>
                             
                             <dt>
-                                <a href="javascript:void(0)" class="anime_point btn  btn-large" rel="item_acta_<?= $id; $id++ ?>">
-                                    <?= $point ?>
+                                <a href="javascript:void(0)" class="anime_point btn btn-large" rel="item_acta_<?php echo $id; $id++ ?>">
+                                   <?php echo $point ?>
                                 </a>
                             </dt>
                             <dl class="anime_details" style="display:none">
@@ -65,7 +65,7 @@ include("lang/translator.php");
                    &nbsp;
                     <div class="anime_display " style="display:none;">
                         <!-- content assigned through js switchAnime() -->
-                        <div id="anime_figure"></div>
+                        <div id="anime_figure"><img src="images/perso_1.png"/></div>
                         <div id="anime_text"></div>
                     </div>
                 </div>
@@ -88,77 +88,6 @@ include("lang/translator.php");
                 <div id="panel_rollover">
                     <?= $t->t("panel_rollover")?>
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container-wrapper" id="progress">
-        <div class="container" >
-            <div class="row">
-                <div class="span2">
-                    <h3><?= $t->t("current_progress") ?></h3>
-                </div>
-                <div class="span10">
-                    <div id="progress_bar"></div>
-                    <div class="progress_indices">
-                        <div class="steps">
-                            <div class="step step_f">|</div>
-                            <div class="step">|</div>
-                            <div class="step">|</div>
-                            <div class="step">|</div>
-                            <div class="step step_l">|</div>
-                            
-                        </div>
-                        <div class="marks">
-                            <div class="start">0&euro;</div>
-                            <div class="middle">50 000&euro;</div>
-                            <div class="end">100 000&euro;</div>
-                        </div>
-                    </div>
-                </div>
-<!--
-                <div class="span6">
-                    <?php 
-                        // return # days until dayArray
-                        $dayArray = Array(0,0,0,10,31,2012);
-                        function daysRemaining($dA){
-                            $future = mktime( $dA[0],$dA[1],$dA[2],$dA[3],$dA[4],$dA[5]);
-                            $today  = time();
-                            $diff   = ( $future - $today ) / 60 / 60 / 24 ;
-                            return( $diff < 0 ? "0" : floor($diff));
-                            
-                        }
-                       
-                    ?>
-                    <h3><?= daysRemaining($dayArray) ." ". $t->t("days_remaining") ?> </h3>
-                    <h4><?= $t->t("generous_donators") ?></h4>
-                    <p id="donator-container"></p>
-                    <?php
-                        // fetch from api
-                        $donatorsList = '[["jean",100],["ahmed",1000],["simone",15],["ganesh",50]]';
-                    ?>
-                    <script type="text/javascript">
-                        var donator_id = 0;
-                        var donatorsList;
-                        function switchDonators(  ){
-                            var l = donatorsList.length;
-                            donator_id = ( donator_id == l - 1)? 0: donator_id + 1;
-                            $("#donator-container").html(
-                                donatorsList[donator_id][0]
-                                + "<?= $t->t("path_separator") ?>"
-                                + donatorsList[donator_id][1]+"&euro;"
-                            )
-                        }
-                        (function(){
-                            donatorsList    = <?= $donatorsList ?>;
-                            switchDonators()
-                            setInterval("switchDonators()",3000)
-                        })()
-                    </script>
-                </div>
--->
-
             </div>
         </div>
     </div>
@@ -231,7 +160,7 @@ include("lang/translator.php");
                 </div>
                 <div class="span2 amounts_holder">
                         <input type="radio" name="sum" value="-1" id="sum1" />
-                        <input type="text" name="othersum" value="<?= $t->t('other_placeholder') ?>" size="4" id="othersum" />
+                        <input type="text" name="othersum" value="<?= $t->t('other_placeholder') ?>" id="othersum"  style="width:90px"/>
                         <label for="sum1">&nbsp;&euro;</label>
                         <div class="alert " id="nocado5" style="display:none">
                             Nous ne pouvons pas accepter les soutiens 
@@ -274,6 +203,77 @@ include("lang/translator.php");
         </div>
         </form>
     </div>
+
+    <div class="container-wrapper" id="progress">
+        <div class="container" >
+            <div class="row">
+                <div class="span2">
+                    <h3><?= $t->t("current_progress") ?></h3>
+                </div>
+                <div class="span10">
+                    <div id="progress_bar"></div>
+                    <div class="progress_indices">
+                        <div class="steps">
+                            <div class="step step_f">|</div>
+                            <div class="step">|</div>
+                            <div class="step">|</div>
+                            <div class="step">|</div>
+                            <div class="step step_l">|</div>
+                            
+                        </div>
+                        <div class="marks">
+                            <div class="start">0&euro;</div>
+                            <div class="middle">50 000&euro;</div>
+                            <div class="end">100 000&euro;</div>
+                        </div>
+                    </div>
+                </div>
+<!--
+                <div class="span6">
+                    <?php
+                        // return # days until dayArray
+                        $dayArray = Array(0,0,0,10,31,2012);
+                        function daysRemaining($dA){
+                            $future = mktime( $dA[0],$dA[1],$dA[2],$dA[3],$dA[4],$dA[5]);
+                            $today  = time();
+                            $diff   = ( $future - $today ) / 60 / 60 / 24 ;
+                            return( $diff < 0 ? "0" : floor($diff));
+                            
+                        }
+                       
+                    ?>
+                    <h3><?= daysRemaining($dayArray) ." ". $t->t("days_remaining") ?> </h3>
+                    <h4><?= $t->t("generous_donators") ?></h4>
+                    <p id="donator-container"></p>
+                    <?php
+                        // fetch from api
+                        $donatorsList = '[["jean",100],["ahmed",1000],["simone",15],["ganesh",50]]';
+                    ?>
+                    <script type="text/javascript">
+                        var donator_id = 0;
+                        var donatorsList;
+                        function switchDonators(  ){
+                            var l = donatorsList.length;
+                            donator_id = ( donator_id == l - 1)? 0: donator_id + 1;
+                            $("#donator-container").html(
+                                donatorsList[donator_id][0]
+                                + "<?= $t->t("path_separator") ?>"
+                                + donatorsList[donator_id][1]+"&euro;"
+                            )
+                        }
+                        (function(){
+                            donatorsList    = <?= $donatorsList ?>;
+                            switchDonators()
+                            setInterval("switchDonators()",3000)
+                        })()
+                    </script>
+                </div>
+-->
+
+            </div>
+        </div>
+    </div>
+
       
     <div class="container-wrapper" id="facts">
         <div class="container" >
