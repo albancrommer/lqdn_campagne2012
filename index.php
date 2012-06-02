@@ -15,7 +15,7 @@ include("lang/translator.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $t->t("meta_desc")?>">
     <meta name="author" content="la Quadrature du Net">
-    <link type="text/less" rel="stylesheet" href="bootstrap/less/bootstrap.less"/>
+    <link type="text/less" rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="css/campaign.css"/>
     <link type="text/css" rel="stylesheet" href="jquery-ui-1.8.20.custom/css/custom-theme/jquery-ui-1.8.20.custom.css"/>
     <script  type="text/javascript" src="js/less-1.3.0.min.js"></script>
@@ -172,7 +172,15 @@ include("lang/translator.php");
                         </div>
                 </div>
                 <div class="span3" style="position:relative">
-                    <div class="giftContainer" style="display:none;"></div>
+                    <div class="giftContainer" style="">
+                        <div class="alert " id="piplome" style="">
+                            <p class="cadeaux"><img src="images/upiplome.png"></p>
+                            <p>En remerciement de votre don, vous recevrez 1 000 décimales de π 
+                                dans un certificat personnalisé, envoyé <strong>par courriel au format PDF 
+                                    + un  tirage original de qualité supérieure</strong>.
+                            </p>
+                        </div> 
+                    </div>
                 </div>
             </div>
             <div class="row">
