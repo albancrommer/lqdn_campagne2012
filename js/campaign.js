@@ -24,34 +24,6 @@ $(document).ready(function() {
         switchAnime( $(this));
     });
 
-    // click
-    $("a.anime_point").click(function(){
-
-        var state       = $(window).data('state')
-        var last        = $(window).data('last')
-
-        // Hide only if last click was on the same item
-        if( "active" == state && last == $(this).html() ){
-            $(window).data("state","inactive")
-            $(window).data("last", "")
-            var panel   = $(".anime_display");
-            panel.hide();
-        }else{
-            $(window).data("state","active")
-            $(window).data("last",$(this).html())
-            switchAnime( $(this));
-        }
-    });
-
-    // mouseOut
-    $("a.anime_point").mouseout(function(){
-        var state      = $(window).data('state')
-        if( undefined == state || "inactive" == state ){
-            var panel = $(".anime_display");
-            panel.hide();
-        }
-    });
-
     // gifts
     $(".amounts_holder input").click(function(e){
         var src = $(this).parent("div").find(".alert")
