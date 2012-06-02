@@ -15,9 +15,10 @@ include("lang/translator.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo $t->t("meta_desc")?>">
     <meta name="author" content="la Quadrature du Net">
-    <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link type="text/less" rel="stylesheet" href="bootstrap/less/bootstrap.less"/>
     <link type="text/css" rel="stylesheet" href="css/campaign.css"/>
     <link type="text/css" rel="stylesheet" href="jquery-ui-1.8.20.custom/css/custom-theme/jquery-ui-1.8.20.custom.css"/>
+    <script  type="text/javascript" src="js/less-1.3.0.min.js"></script>
     <script  type="text/javascript" src="jquery-ui-1.8.20.custom/js/jquery-1.7.2.min.js"></script>
     <script  type="text/javascript" src="jquery-ui-1.8.20.custom/js/jquery-ui-1.8.20.custom.min.js"></script>
     <script  type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -466,9 +467,7 @@ include("lang/translator.php");
         
         // mouseOver
         $("a.anime_point").mouseover(function(){
-            
             $(window).data("last", $(this).html())
-            console.log( $(window).data("last" ) )
             switchAnime( $(this));
         });
         
